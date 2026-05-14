@@ -15,10 +15,10 @@ inference. Low = best guess, needs a manual verification pass.
 
 | ATS Vendor | Count | % of 250 |
 |---|---|---|
-| **Workday** | **127** | **51%** |
+| **Workday** | **126** | **50%** |
 | Custom / Unknown | 23 | 9% |
 | Oracle Cloud Recruiting (Fusion) | 22 | 9% |
-| SAP SuccessFactors | 21 | 8% |
+| SAP SuccessFactors | 22 | 9% |
 | Phenom People | 12 | 5% |
 | iCIMS | 13 | 5% |
 | Oracle Taleo (legacy) | 11 | 4% |
@@ -29,8 +29,8 @@ inference. Low = best guess, needs a manual verification pass.
 | Greenhouse | 2 | 1% |
 | **Total** | **250** | |
 
-**Headline:** Workday is 51% of the Fortune 250 — more than the next five
-vendors combined. The v1 Workday wedge covers over half the target list with
+**Headline:** Workday is 50% of the Fortune 250 — more than the next five
+vendors combined. The v1 Workday wedge covers about half the target list with
 one integration, and reuses the workday-autofill-agent extension as the
 submission layer.
 
@@ -38,7 +38,7 @@ submission layer.
 - *Oracle, combined:* Taleo (11) + Fusion Cloud Recruiting (22) = 33. They are
   genuinely different products needing different integrations — kept separate
   here — but if a future Oracle integration handles both, that's the #2 bucket.
-- *Effective Workday is likely higher than 127.* Phenom People (12) and Avature
+- *Effective Workday is likely higher than 126.* Phenom People (12) and Avature
   (2) are front-end / candidate-experience layers that frequently sit on top of
   another ATS — often Workday — at the actual apply step. Several Phenom rows
   (UnitedHealth, State Farm, Freddie Mac, Lincoln National, Tenet) were flagged
@@ -46,7 +46,7 @@ submission layer.
 
 ---
 
-## Workday — 127
+## Workday — 126
 
 The v1 target bucket. Medium-confidence rows verified 2026-05-14 (see JOURNAL).
 
@@ -67,7 +67,6 @@ The v1 target bucket. Medium-confidence rows verified 2026-05-14 (see JOURNAL).
 | 25 | Fannie Mae | fanniemae.wd1.myworkdayjobs.com/FannieMaeCareers | High |
 | 27 | Verizon | verizon.wd12.myworkdayjobs.com/verizon-careers | High |
 | 28 | Marathon Petroleum | mpc.wd1.myworkdayjobs.com/MPCCareers | High |
-| 29 | Phillips 66 | careers.phillips66.com — suspected SAP SuccessFactors (`/go/` paths), UNVERIFIED | Low |
 | 31 | Humana | humana.wd5.myworkdayjobs.com/Humana_External_Career_Site | High |
 | 32 | AT&T | att.wd1.myworkdayjobs.com/ATTGeneral | High |
 | 33 | Comcast | comcast.wd5.myworkdayjobs.com/Comcast_Careers | High |
@@ -210,7 +209,7 @@ URL pattern.
 | 237 | Emerson Electric | hdjq.fa.us2.oraclecloud.com/.../CX_1 | High |
 | 250 | Texas Instruments | edbz.fa.us2.oraclecloud.com/.../CX/jobs | High |
 
-## SAP SuccessFactors — 21
+## SAP SuccessFactors — 22
 
 The `successfactors.com/careers` or Career Site Builder (`/go/`, `/job/`) URL
 patterns.
@@ -218,6 +217,7 @@ patterns.
 | Rank | Company | Careers URL | Confidence |
 |---|---|---|---|
 | 9 | Exxon Mobil | career4.successfactors.com/careers?company=exxonmobilP | High |
+| 29 | Phillips 66 | careers.phillips66.com (`/go/` Career Site Builder pattern) | Medium |
 | 68 | New York Life Insurance | jobs.newyorklife.com | Medium |
 | 86 | American Airlines | jobs.aa.com | Medium |
 | 136 | Nucor | jobs.nucor.com | Medium |
@@ -380,15 +380,13 @@ BrassRing where it's the only vendor present, etc.).
 
 ## Next steps
 
-1. **Verification pass — done 2026-05-14.** 9 of 10 Workday-adjacent Medium
-   rows resolved. Confirmed Workday: Bank of America, Nike, World Kinect,
+1. **Verification pass — done 2026-05-14. All 10 Workday-adjacent Medium rows
+   resolved.** Confirmed Workday: Bank of America, Nike, World Kinect,
    Cleveland-Cliffs, Discover, ConocoPhillips (upgraded Medium→High). Loews URL
    corrected to the corporate tenant (`loewscorp`, not the hotels subsidiary).
    Misbucketed and moved out of Workday: **AMD → iCIMS**, **Lincoln National →
-   SAP SuccessFactors**. Workday count 129 → 127. **Still open: Phillips 66** —
-   `careers.phillips66.com/go/...` paths suggest SAP SuccessFactors, but the
-   direct page fetch was declined; left in the Workday bucket flagged Low/
-   UNVERIFIED pending another check.
+   SAP SuccessFactors**, **Phillips 66 → SAP SuccessFactors** (the `/go/` Career
+   Site Builder URL pattern). Workday count 129 → 126.
 2. **Decide whether Phenom/Avature get verified into Workday** — could push the
    v1 bucket past 135.
 3. **Confirm the Workday slice as the v1 discovery target** and design the
