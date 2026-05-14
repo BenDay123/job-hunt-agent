@@ -22,10 +22,11 @@ This validates the Workday-first wedge hard. One integration covers more than ha
 
 Two caveats worth remembering. First, the research agents couldn't fetch raw page source, so the Medium/Low confidence rows need a manual verification pass — especially the ones near the Workday bucket. Second, Phenom and Avature are front-end layers that often sit on top of another ATS (frequently Workday) at the actual apply step — so the *effective* Workday number is probably higher than 129. A verification pass could push it past 135.
 
-**Stepping away here.** Ben stepped away after the buckets were compiled. Repo is scaffolded (`README.md`, `.gitignore`, `data/fortune-250.md`, `data/ats-buckets.md`, this journal) but **not yet committed** — left for review first.
+**Stepping away here.** Ben stepped away after the buckets were compiled. Repo is scaffolded (`README.md`, `.gitignore`, `data/fortune-250.md`, `data/ats-buckets.md`, this journal).
+
+**Committed, pushed, public.** Came back, committed the scaffold (`c5ab303`, root commit on `main`) and pushed it to a new public GitHub repo: https://github.com/BenDay123/job-hunt-agent. Build-in-public from commit one this time — the bucketed Fortune 250 is the first thing visible.
 
 **What's next.**
-- Review the scaffold and make the initial commit.
 - Verification pass on the Medium/Low Workday-adjacent rows.
 - Decide whether Phenom/Avature get verified into the Workday bucket.
 - Confirm the Workday slice as the v1 target, then design the discovery mechanism — Workday tenant job-search API vs. per-tenant crawling.
