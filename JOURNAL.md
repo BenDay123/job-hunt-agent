@@ -1,3 +1,18 @@
+## 2026-05-14 — Verification pass on the Workday-adjacent rows.
+
+The bucketing pass left 10 rows in (or near) the Workday bucket at Medium confidence — the research agents had inferred Workday without seeing a `myworkdayjobs` URL directly. Ran a verification pass with direct search + page fetches. 9 of 10 resolved:
+
+- **Confirmed Workday (6):** Bank of America (`ghr.wd1`), Nike (`nike.wd1/nke`), World Kinect (`wfscorp.wd5/wfscareers`), Cleveland-Cliffs (`aksteel.wd1` — legacy AK Steel tenant name), Discover (`discover.wd5`), ConocoPhillips (`conocophillips.wd1/External` — page fetch confirmed, upgraded Medium→High).
+- **URL was wrong (1):** Loews — the file had the *hotels subsidiary* tenant. The Fortune 250 entity is Loews Corporation: `loewscorp.wd1.myworkdayjobs.com/loewscorp`. Still Workday, just the wrong site.
+- **Misbucketed — not Workday (2):** AMD is **iCIMS** (`careers-amd.icims.com`, confirmed by fetch). Lincoln National is **SAP SuccessFactors** (`rmkcdn.successfactors.com` + `/go/` paths, confirmed by fetch). The original agent had also mis-assigned Lincoln the `ghr.wd1` URL — which is actually Bank of America's tenant. Two companies crossed.
+- **Still open (1):** Phillips 66. `careers.phillips66.com/go/...` paths point to SAP SuccessFactors, but the direct fetch was declined, so it's unverified. Left in the Workday bucket flagged Low/UNVERIFIED.
+
+Net: Workday 129 → 127. Lesson for the rest of the buckets — the agents' Medium-confidence Workday calls were right 7 times out of 9, but the 2 misses were confident-looking and would have wasted v1 integration effort. Any Medium row that v1 depends on gets a direct page fetch before it's trusted.
+
+This session ran long (~4 hrs wall clock, mostly background agents + being away). Stopped here after writing the verification results into `ats-buckets.md`.
+
+**What's next.** Resolve Phillips 66. Then the bigger open question still stands: decide whether Phenom/Avature get verified into the Workday bucket, and design the Workday discovery mechanism (tenant job-search API vs. per-tenant crawling).
+
 ## 2026-05-13 — New project. Scoped the job-hunt agent and bucketed the Fortune 250.
 
 Workday-autofill-agent is done for now — the LinkedIn post went out, the tool works, that arc is closed. This is the next one.

@@ -15,12 +15,12 @@ inference. Low = best guess, needs a manual verification pass.
 
 | ATS Vendor | Count | % of 250 |
 |---|---|---|
-| **Workday** | **129** | **52%** |
+| **Workday** | **127** | **51%** |
 | Custom / Unknown | 23 | 9% |
 | Oracle Cloud Recruiting (Fusion) | 22 | 9% |
-| SAP SuccessFactors | 20 | 8% |
+| SAP SuccessFactors | 21 | 8% |
 | Phenom People | 12 | 5% |
-| iCIMS | 12 | 5% |
+| iCIMS | 13 | 5% |
 | Oracle Taleo (legacy) | 11 | 4% |
 | Eightfold | 8 | 3% |
 | SmartRecruiters | 6 | 2% |
@@ -29,7 +29,7 @@ inference. Low = best guess, needs a manual verification pass.
 | Greenhouse | 2 | 1% |
 | **Total** | **250** | |
 
-**Headline:** Workday is 52% of the Fortune 250 — more than the next five
+**Headline:** Workday is 51% of the Fortune 250 — more than the next five
 vendors combined. The v1 Workday wedge covers over half the target list with
 one integration, and reuses the workday-autofill-agent extension as the
 submission layer.
@@ -38,7 +38,7 @@ submission layer.
 - *Oracle, combined:* Taleo (11) + Fusion Cloud Recruiting (22) = 33. They are
   genuinely different products needing different integrations — kept separate
   here — but if a future Oracle integration handles both, that's the #2 bucket.
-- *Effective Workday is likely higher than 129.* Phenom People (12) and Avature
+- *Effective Workday is likely higher than 127.* Phenom People (12) and Avature
   (2) are front-end / candidate-experience layers that frequently sit on top of
   another ATS — often Workday — at the actual apply step. Several Phenom rows
   (UnitedHealth, State Farm, Freddie Mac, Lincoln National, Tenet) were flagged
@@ -46,9 +46,9 @@ submission layer.
 
 ---
 
-## Workday — 129
+## Workday — 127
 
-The v1 target bucket.
+The v1 target bucket. Medium-confidence rows verified 2026-05-14 (see JOURNAL).
 
 | Rank | Company | Careers URL | Confidence |
 |---|---|---|---|
@@ -67,13 +67,13 @@ The v1 target bucket.
 | 25 | Fannie Mae | fanniemae.wd1.myworkdayjobs.com/FannieMaeCareers | High |
 | 27 | Verizon | verizon.wd12.myworkdayjobs.com/verizon-careers | High |
 | 28 | Marathon Petroleum | mpc.wd1.myworkdayjobs.com/MPCCareers | High |
-| 29 | Phillips 66 | careers.phillips66.com | Medium |
+| 29 | Phillips 66 | careers.phillips66.com — suspected SAP SuccessFactors (`/go/` paths), UNVERIFIED | Low |
 | 31 | Humana | humana.wd5.myworkdayjobs.com/Humana_External_Career_Site | High |
 | 32 | AT&T | att.wd1.myworkdayjobs.com/ATTGeneral | High |
 | 33 | Comcast | comcast.wd5.myworkdayjobs.com/Comcast_Careers | High |
 | 37 | Target | target.wd5.myworkdayjobs.com/targetcareers | High |
 | 38 | Dell Technologies | dell.wd1.myworkdayjobs.com/External | High |
-| 39 | Bank of America | careers.bankofamerica.com/en-us/job-search | Medium |
+| 39 | Bank of America | ghr.wd1.myworkdayjobs.com/Lateral-US | High |
 | 41 | Walt Disney | disney.wd5.myworkdayjobs.com/disneycareer | High |
 | 43 | Johnson & Johnson | jj.wd5.myworkdayjobs.com/JJ | High |
 | 44 | UPS | hcmportal.wd5.myworkdayjobs.com/Search | High |
@@ -88,7 +88,7 @@ The v1 target bucket.
 | 61 | Allstate | allstate.wd5.myworkdayjobs.com/allstate_careers | High |
 | 64 | Caterpillar | cat.wd5.myworkdayjobs.com/CaterpillarCareers | High |
 | 67 | Pfizer | pfizer.wd1.myworkdayjobs.com/PfizerCareers | High |
-| 70 | ConocoPhillips | careers.conocophillips.com/job-search-results | Medium |
+| 70 | ConocoPhillips | conocophillips.wd1.myworkdayjobs.com/External | High |
 | 72 | TD Synnex | synnex.wd5.myworkdayjobs.com/tdsynnexcareers | High |
 | 74 | Broadcom | broadcom.wd1.myworkdayjobs.com/External_Career | High |
 | 76 | Eli Lilly | lilly.wd5.myworkdayjobs.com/LLY | High |
@@ -105,7 +105,7 @@ The v1 target bucket.
 | 95 | Bristol-Myers Squibb | bristolmyerssquibb.wd5.myworkdayjobs.com/BMS | High |
 | 96 | Coca-Cola | coke.wd1.myworkdayjobs.com/coca-cola-careers | High |
 | 97 | TIAA | tiaa.wd1.myworkdayjobs.com/Search | High |
-| 99 | Nike | careers.nike.com/jobs | Medium |
+| 99 | Nike | nike.wd1.myworkdayjobs.com/nke | High |
 | 101 | Qualcomm | qualcomm.wd12.myworkdayjobs.com/en-US/External | High |
 | 102 | General Electric (Aerospace) | geaerospace.wd5.myworkdayjobs.com/GE_ExternalSite | High |
 | 103 | Abbott Laboratories | abbott.wd5.myworkdayjobs.com/en-US/abbottcareers | High |
@@ -117,7 +117,7 @@ The v1 target bucket.
 | 119 | US Foods | usfoods.wd1.myworkdayjobs.com/usfoodscareersExternal | High |
 | 120 | Warner Bros. Discovery | warnerbros.wd5.myworkdayjobs.com/global | High |
 | 121 | GE Vernova | gevernova.wd5.myworkdayjobs.com/Vernova_ExternalSite | High |
-| 122 | World Kinect | world-kinect.com/careers | Medium |
+| 122 | World Kinect | wfscorp.wd5.myworkdayjobs.com/wfscareers | High |
 | 123 | Mondelez International | mdlz.wd3.myworkdayjobs.com/External | High |
 | 124 | Lithia Motors | lithia.wd5.myworkdayjobs.com/LithiaCareers | High |
 | 125 | Micron Technology | micron.wd1.myworkdayjobs.com/External | High |
@@ -125,7 +125,6 @@ The v1 target bucket.
 | 128 | Lennar | lennar.wd1.myworkdayjobs.com/Lennar_Jobs | High |
 | 129 | Hewlett Packard Enterprise | hpe.wd5.myworkdayjobs.com/Jobsathpe | High |
 | 134 | PayPal | paypal.wd1.myworkdayjobs.com/jobs | High |
-| 135 | Advanced Micro Devices (AMD) | careers.amd.com/careers-home/jobs | Medium |
 | 138 | Oneok | oneok.wd1.myworkdayjobs.com/ONEOK | High |
 | 139 | Mastercard | mastercard.wd1.myworkdayjobs.com/CorporateCareers | High |
 | 140 | Duke Energy | dukeenergy.wd1.myworkdayjobs.com/Search | High |
@@ -169,15 +168,14 @@ The v1 target bucket.
 | 213 | GE HealthCare Technologies | gehc.wd5.myworkdayjobs.com/GEHC_ExternalSite | High |
 | 218 | Kimberly-Clark | kimberlyclark.wd1.myworkdayjobs.com/GLOBAL | High |
 | 224 | Dollar Tree | dollartree.wd5.myworkdayjobs.com/dollartreeus | High |
-| 226 | Cleveland-Cliffs | aksteel.wd1.myworkdayjobs.com/careers | Medium |
+| 226 | Cleveland-Cliffs | aksteel.wd1.myworkdayjobs.com/careers | High |
 | 227 | Ameriprise Financial | ameriprise.wd5.myworkdayjobs.com/Ameriprise | High |
-| 229 | Lincoln National (Lincoln Financial) | ghr.wd1.myworkdayjobs.com (front: jobs.lincolnfinancial.com) | Medium |
 | 230 | Corebridge Financial | corebridgefinancial.wd1.myworkdayjobs.com/CorebridgeFinancial | High |
 | 231 | Goodyear Tire & Rubber | goodyear.wd1.myworkdayjobs.com/GoodyearCareers | High |
 | 232 | Truist Financial | truist.wd1.myworkdayjobs.com/Careers | High |
-| 233 | Loews | loewshotels.wd5.myworkdayjobs.com/loewshotels | Medium |
+| 233 | Loews | loewscorp.wd1.myworkdayjobs.com/loewscorp | High |
 | 243 | PulteGroup | pultegroup.wd1.myworkdayjobs.com/PGI | High |
-| 244 | Discover Financial Services | discover.wd5.myworkdayjobs.com/Discover | Medium |
+| 244 | Discover Financial Services | discover.wd5.myworkdayjobs.com/Discover | High |
 | 246 | O'Reilly Automotive | oreillyauto.wd1.myworkdayjobs.com/oreilly | High |
 | 248 | Leidos | leidos.wd5.myworkdayjobs.com/External | High |
 | 249 | MGM Resorts International | mgmresorts.wd5.myworkdayjobs.com/MGMCareers | High |
@@ -212,7 +210,7 @@ URL pattern.
 | 237 | Emerson Electric | hdjq.fa.us2.oraclecloud.com/.../CX_1 | High |
 | 250 | Texas Instruments | edbz.fa.us2.oraclecloud.com/.../CX/jobs | High |
 
-## SAP SuccessFactors — 20
+## SAP SuccessFactors — 21
 
 The `successfactors.com/careers` or Career Site Builder (`/go/`, `/job/`) URL
 patterns.
@@ -237,6 +235,7 @@ patterns.
 | 214 | Altria | careers.altria.com/jobs | Medium |
 | 215 | Colgate-Palmolive | jobs.colgate.com | Medium |
 | 228 | Aramark | career4.successfactors.com/careers?company=ARAMARKPROD | High |
+| 229 | Lincoln National (Lincoln Financial) | jobs.lincolnfinancial.com | High |
 | 239 | W.W. Grainger | career8.successfactors.com/careers?company=Grainger | High |
 | 240 | Aflac | careers.aflac.com | Medium |
 
@@ -260,7 +259,7 @@ apply step. Verify the apply-step backend before treating as a single bucket.
 | 211 | Cognizant Technology Solutions | careers.cognizant.com/global-en/jobs | Medium |
 | 235 | Global Partners | careers.globalp.com/us/en/home | Medium |
 
-## iCIMS — 12
+## iCIMS — 13
 
 | Rank | Company | Careers URL | Confidence |
 |---|---|---|---|
@@ -268,6 +267,7 @@ apply step. Verify the apply-step backend before treating as a single bucket.
 | 84 | Charter Communications | careers-charter.icims.com | High |
 | 89 | General Dynamics | careers-gdeb.icims.com | Medium |
 | 108 | Dollar General | jobs-dollargeneral.icims.com | High |
+| 135 | Advanced Micro Devices (AMD) | careers-amd.icims.com/jobs | High |
 | 159 | Quanta Services | careers-quanta.icims.com | High |
 | 172 | Constellation Energy | careers-constellationenergy.icims.com | High |
 | 180 | Exelon | careers-exeloncorp.icims.com | High |
@@ -380,10 +380,15 @@ BrassRing where it's the only vendor present, etc.).
 
 ## Next steps
 
-1. **Verification pass on the Medium/Low rows that touch the Workday bucket** —
-   Phillips 66, Bank of America, Nike, World Kinect, AMD, Cleveland-Cliffs,
-   Lincoln National, Loews, Discover. Confirm the apply-step backend by stepping
-   through an actual application.
+1. **Verification pass — done 2026-05-14.** 9 of 10 Workday-adjacent Medium
+   rows resolved. Confirmed Workday: Bank of America, Nike, World Kinect,
+   Cleveland-Cliffs, Discover, ConocoPhillips (upgraded Medium→High). Loews URL
+   corrected to the corporate tenant (`loewscorp`, not the hotels subsidiary).
+   Misbucketed and moved out of Workday: **AMD → iCIMS**, **Lincoln National →
+   SAP SuccessFactors**. Workday count 129 → 127. **Still open: Phillips 66** —
+   `careers.phillips66.com/go/...` paths suggest SAP SuccessFactors, but the
+   direct page fetch was declined; left in the Workday bucket flagged Low/
+   UNVERIFIED pending another check.
 2. **Decide whether Phenom/Avature get verified into Workday** — could push the
    v1 bucket past 135.
 3. **Confirm the Workday slice as the v1 discovery target** and design the
